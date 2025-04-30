@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.time.LocalDateTime;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import sample.cafekiosk.unit.beverage.Americano;
 import sample.cafekiosk.unit.beverage.Latte;
@@ -20,6 +21,8 @@ class CafeKioskTest {
         System.out.println(">>> 담긴 음료 : " + cafeKiosk.getBeverages().get(0).getName());
     }
 
+//    @DisplayName("음료 1개 추가 테스트")
+    @DisplayName("음료 1개를 추가하면 주문 목록에 담긴다.")
     @Test
     void add() {
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -31,6 +34,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("음료 여러개를 추가하면 주문 목록에 담긴다.")
     void addSeveralBeverages() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
@@ -42,6 +46,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("음료는 한 잔 이하로 주문하면 주문을 생성할 수 없다.")
     void addZeroBeverages() { //예외 조건 테스트
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
@@ -52,6 +57,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("음료를 1개를 삭제할 수 있다.")
     void remove() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
@@ -64,6 +70,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("음료를 전부 삭제할 수 있다.")
     void clear() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
@@ -78,6 +85,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("주문한 음료들의 총 가격을 알 수 있다.")
     void calculateTotalPrice() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
@@ -92,6 +100,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("영업 시간 내에 주문하면 주문을 생성할 수 있다.")
     void createOrderWithCurrentTime() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
@@ -104,6 +113,7 @@ class CafeKioskTest {
     }
 
     @Test
+    @DisplayName("영업 시작 시간 이전에 주문하면 주문을 생성할 수 없다.")
     void createOrderOutsideOpenTime() {
         CafeKiosk cafeKiosk = new CafeKiosk();
         Americano americano = new Americano();
