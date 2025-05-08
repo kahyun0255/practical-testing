@@ -1,6 +1,5 @@
 package sample.cafekiosk.spring.api.service.order;
 
-import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
@@ -8,6 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sample.cafekiosk.spring.api.controller.order.request.OrderCreateRequest;
 import sample.cafekiosk.spring.api.controller.order.response.OrderResponse;
 import sample.cafekiosk.spring.domain.order.Order;
