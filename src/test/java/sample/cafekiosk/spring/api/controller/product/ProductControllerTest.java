@@ -146,4 +146,5 @@ class ProductControllerTest {
                 .andExpect(jsonPath("$.message").value("상품 가격은 양수여야 합니다."))
                 .andExpect(jsonPath("$.data").isEmpty());
     }
+
 }
