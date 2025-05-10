@@ -26,6 +26,10 @@ public class MailService {
             return true;
         }
 
+//        mailSendClient.a(); //a, b, c는 실제 객체 호출, sendMail은 Stubbing(Spy)
+//        mailSendClient.b();
+//        mailSendClient.c();
+
         return false;
     }
 }
