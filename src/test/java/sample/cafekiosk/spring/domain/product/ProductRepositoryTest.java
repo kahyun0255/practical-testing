@@ -7,16 +7,17 @@ import static sample.cafekiosk.spring.domain.product.ProductSellingStatus.SELLIN
 import static sample.cafekiosk.spring.domain.product.ProductSellingStatus.STOP_SELLING;
 import static sample.cafekiosk.spring.domain.product.ProductType.HANDMADE;
 
+import jakarta.transaction.Transactional;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
+import sample.cafekiosk.spring.IntegrationTestSupport;
 
-@ActiveProfiles("test")
-@DataJpaTest //자동으로 롤백
-class ProductRepositoryTest {
+@Transactional
+class ProductRepositoryTest extends IntegrationTestSupport {
 
     @Autowired
     private ProductRepository productRepository;

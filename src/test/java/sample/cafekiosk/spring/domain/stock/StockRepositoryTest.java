@@ -8,15 +8,18 @@ import static sample.cafekiosk.spring.domain.product.ProductSellingStatus.SELLIN
 import static sample.cafekiosk.spring.domain.product.ProductSellingStatus.STOP_SELLING;
 import static sample.cafekiosk.spring.domain.product.ProductType.HANDMADE;
 
+import jakarta.persistence.criteria.CriteriaBuilder.In;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import sample.cafekiosk.spring.IntegrationTestSupport;
 import sample.cafekiosk.spring.domain.product.Product;
 
-@SpringBootTest
-class StockRepositoryTest {
+@Transactional
+class StockRepositoryTest extends IntegrationTestSupport {
 
     @Autowired
     private StockRepository stockRepository;
