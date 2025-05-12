@@ -11,7 +11,7 @@ import sample.cafekiosk.spring.domain.BaseEntity;
 
 @Entity
 @Getter
-@NoArgsConstructor( access = lombok.AccessLevel.PROTECTED)
+@NoArgsConstructor(access = lombok.AccessLevel.PROTECTED)
 public class MailSendHistory extends BaseEntity {
 
     @Id

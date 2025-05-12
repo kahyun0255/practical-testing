@@ -1,7 +1,6 @@
 package sample.cafekiosk.spring.domain.order;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static sample.cafekiosk.spring.domain.product.ProductSellingStatus.SELLING;
 
 import jakarta.transaction.Transactional;
@@ -12,8 +11,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.ActiveProfiles;
 import sample.cafekiosk.spring.IntegrationTestSupport;
 import sample.cafekiosk.spring.domain.orderproduct.OrderProductRepository;
 import sample.cafekiosk.spring.domain.product.Product;
@@ -73,7 +70,7 @@ class OrderRepositoryTest extends IntegrationTestSupport {
     }
 
     private static Order createOrder(Product product1, Product product2, OrderStatus orderStatus,
-                                  LocalDateTime startDateTime) {
+                                     LocalDateTime startDateTime) {
         return Order.builder()
                 .products(List.of(product1, product2))
                 .orderStatus(orderStatus)

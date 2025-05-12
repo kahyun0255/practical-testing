@@ -12,8 +12,6 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.test.context.ActiveProfiles;
 import sample.cafekiosk.spring.IntegrationTestSupport;
 
 @Transactional
@@ -93,7 +91,7 @@ class ProductRepositoryTest extends IntegrationTestSupport {
     }
 
     private Product createProduct(String productNumber, ProductType type, ProductSellingStatus sellingStatus,
-                                         String name, int price) {
+                                  String name, int price) {
         return Product.builder()
                 .productNumber(productNumber)
                 .type(type)

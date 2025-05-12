@@ -21,7 +21,7 @@ class CafeKioskTest {
         System.out.println(">>> 담긴 음료 : " + cafeKiosk.getBeverages().get(0).getName());
     }
 
-//    @DisplayName("음료 1개 추가 테스트")
+    //    @DisplayName("음료 1개 추가 테스트")
     @DisplayName("음료 1개를 추가하면 주문 목록에 담긴다.")
     @Test
     void add() {

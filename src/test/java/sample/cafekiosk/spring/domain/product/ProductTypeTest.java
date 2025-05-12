@@ -14,7 +14,7 @@ class ProductTypeTest {
 
     @DisplayName("상품 타입이 재고 관련 타입인지를 체크한다.")
     @Test
-    void containsStockType(){
+    void containsStockType() {
         //given
         ProductType givenType = ProductType.HANDMADE;
 
@@ -28,7 +28,7 @@ class ProductTypeTest {
 
     @DisplayName("상품 타입이 재고 관련 타입인지를 체크한다.")
     @Test
-    void containsStockType2(){
+    void containsStockType2() {
         //given
         ProductType givenType = ProductType.BAKERY;
 
@@ -44,7 +44,7 @@ class ProductTypeTest {
     @DisplayName("상품이 재고 관련 타입인지를 체크한다.")
     @CsvSource({"HANDMADE, false", "BOTTLE, true", "BAKERY, true"})
     @ParameterizedTest
-    void containsStockType3(ProductType productType, boolean expected){
+    void containsStockType3(ProductType productType, boolean expected) {
         //when
         boolean result = ProductType.containsStockType(productType);
 
@@ -63,7 +63,7 @@ class ProductTypeTest {
     @DisplayName("상품이 재고 관련 타입인지를 체크한다.")
     @MethodSource("provideProductTypesForCheckingStockType")
     @ParameterizedTest
-    void containsStockType4(ProductType productType, boolean expected){
+    void containsStockType4(ProductType productType, boolean expected) {
         //when
         boolean result = ProductType.containsStockType(productType);
 
